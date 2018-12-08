@@ -25,6 +25,7 @@
 ---
 - Chrome Extension
 - Aws EC2 Server
+- Git
 <br></br>
 
 ## 사용 기술 
@@ -38,6 +39,7 @@
 ---
 - Window OS
 - Spring Tool Suite version: 4.3.17.RELEASE
+- Tomcat version: 8.5
 - MySql WorkBeanch 8.0
 <br></br>
 
