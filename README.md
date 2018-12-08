@@ -51,6 +51,9 @@
 - 소켓을 통한 실시간 사용 좌석 확인.
 - 이미지 업로드를 위한 전용 서버 구현.
 ### * 업로드 전용 서버에 요청 보내기
+~~~html
+<form action="insertFood" id="addForm"  method="POST"  enctype="multipart/form-data">
+~~~
 ~~~javascript
 var formData = new FormData($('#addForm')[0]); // form태그의 name값을 파라미터 형식으로 변환.
 $.ajax({
