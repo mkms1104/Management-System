@@ -1,13 +1,13 @@
 # [팀 프로젝트] 통합 매장 관리 시스템
 ---
 <div>
-<img src="https://user-images.githubusercontent.com/19260410/49681660-1ddac280-fae9-11e8-8eaa-47f08a9cd447.PNG" width="450">
-<img src="https://user-images.githubusercontent.com/19260410/49681665-2c28de80-fae9-11e8-9444-825027fd420f.PNG" width="450">
+<img src="https://user-images.githubusercontent.com/19260410/49681660-1ddac280-fae9-11e8-8eaa-47f08a9cd447.PNG" width="420">
+<img src="https://user-images.githubusercontent.com/19260410/49681665-2c28de80-fae9-11e8-9444-825027fd420f.PNG" width="420">
 </div>
 
 <div>
-<img src="https://user-images.githubusercontent.com/19260410/49681669-3a76fa80-fae9-11e8-8875-df1e3cf1aab2.PNG" width="450">
-<img src="https://user-images.githubusercontent.com/19260410/49681676-46fb5300-fae9-11e8-92d8-ce37d608483c.PNG" width="450">
+<img src="https://user-images.githubusercontent.com/19260410/49681669-3a76fa80-fae9-11e8-8875-df1e3cf1aab2.PNG" width="420">
+<img src="https://user-images.githubusercontent.com/19260410/49681676-46fb5300-fae9-11e8-92d8-ce37d608483c.PNG" width="420">
 </div>
 
 ## [ [시연영상](https://youtu.be/GoBE7Rcq_ks) ]
