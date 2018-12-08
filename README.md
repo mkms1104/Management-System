@@ -57,7 +57,7 @@
 ~~~javascript
 var formData = new FormData($('#addForm')[0]); // form태그의 name값을 파라미터 형식으로 변환.
 $.ajax({
-    async : false,
+    async : false, // ajax를 동기적 실행.
     type : 'POST',
     url : 'http://52.79.242.155:8080/FileServer/uploadFile/food', // EC2를 통해 배포한 서버 주소로 요청.
     data : formData,
