@@ -50,7 +50,7 @@
 - 카운트 함수를 통한 실시간 사용시간 처리.
 - 소켓을 통한 실시간 사용 좌석 확인.
 - 이미지 업로드를 위한 전용 서버 구현.
-### * 업로드 전용 서버에 요청 보내기
+### * 업로드 전용 서버 처리 과정
 ~~~html
 <form action="insertFood" id="addForm"  method="POST"  enctype="multipart/form-data">
 ~~~
@@ -69,4 +69,7 @@ $.ajax({
           $('#addForm').submit();
      }
 });
+~~~
+~~~html
+<img src="http://52.79.242.155:8080/FileServer/resources/foodImg/파일이름"/>
 ~~~
