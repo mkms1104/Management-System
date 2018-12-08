@@ -50,3 +50,20 @@
 - 카운트 함수를 통한 실시간 사용시간 처리.
 - 소켓을 통한 실시간 사용 좌석 확인.
 - 이미지 업로드를 위한 전용 서버 구현.
+### * 업로드 전용 서버에 요청 보내기
+~~~javascript
+var formData = new FormData($('#addForm')[0]); // form태그의 name값을 파라미터 형식으로 변환.
+$.ajax({
+    async : false,
+    type : 'POST',
+    url : 'http://52.79.242.155:8080/FileServer/uploadFile/food', // EC2를 통해 배포한 서버 주소로 요청.
+    data : formData,
+    processData : false,
+    contentType : false,
+                 
+     success : function(data) {
+          $('#addTable input[name=food_photo]').val(data); // 서버에서 받은 파일이름으로 DB에 Insert.
+          $('#addForm').submit();
+     }
+});
+~~~
