@@ -48,7 +48,7 @@
 - 사용자의 좌석 사용과 음식 주문 페이지 설계 및 디자인, 사용자 반응, CRUD 처리.
 - 관리자의 좌석 관리와 주문 처리, 음식 추가 및 재고 관리 페이지 설계 및 디자인, 사용자 반응, CRUD 처리.
 - 카운트 함수를 통한 실시간 사용시간 처리.
-- 소켓을 통한 실시간 사용 좌석 확인.
+- 소켓을 통한 실시간 사용 시간 확인.
 - 이미지 업로드를 위한 전용 서버 구현.
 ### * 업로드 전용 서버 처리 과정
 ~~~html
@@ -72,4 +72,29 @@ $.ajax({
 ~~~
 ~~~html
 <img src="http://52.79.242.155:8080/FileServer/resources/foodImg/파일이름"/>
+~~~
+### * 실시간 사용 시간 확인 과정
+~~~javascript
+var timer = setInterval(function (){
+    // min(분), sec(초)  
+	if(sec == 1 && min == 0){ // 사용 시간 종료
+		clearInterval(timer);
+
+	} else{
+		sec--;
+							
+	    if(sec < 1){
+		    min--;
+		    sec = 59;
+	    }
+	}
+						
+	var seatUser = { // 서버로 전송할 객체 생성
+		seatId : seatId,
+		min : min,
+		sec : sec,
+	};
+
+		sock.send(JSON.stringify(seatUser)); // 1초 마다 JSON 형태의 문자열로 변경 후 서버로 전송
+	}, 1000);						
 ~~~
