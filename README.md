@@ -51,9 +51,11 @@
 - 스프링 소켓을 통한 실시간 사용 시간 확인.
 - 이미지 업로드를 위한 전용 서버 구현.
 ### * 업로드 전용 서버 처리 과정
+#### form 태그 
 ~~~html
 <form action="insertFood" id="addForm"  method="POST"  enctype="multipart/form-data">
 ~~~
+#### 서버에 저장하기
 ~~~javascript
 var formData = new FormData($('#addForm')[0]); // form태그의 name값을 파라미터 형식으로 변환.
 $.ajax({
@@ -70,6 +72,7 @@ $.ajax({
      }
 });
 ~~~
+#### 서버에서 불러오기
 ~~~html
 <img src="http://52.79.242.155:8080/FileServer/resources/foodImg/파일이름"/>
 ~~~
