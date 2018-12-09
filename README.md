@@ -77,6 +77,7 @@ $.ajax({
 <img src="http://52.79.242.155:8080/FileServer/resources/foodImg/파일이름"/>
 ~~~
 ### * 실시간 사용 시간 확인 과정
+#### 사용자 페이지에서 사용 시간 전달
 ~~~javascript
 var sock = new SockJS("<c:url value="/echo"/>"); // 소켓 연결
 
@@ -106,6 +107,7 @@ var timer = setInterval(function (){
 	sock.send(JSON.stringify(seatUser)); // 1초 마다 JSON 형태의 문자열로 변경 후 서버로 전송
 }, 1000);						
 ~~~
+#### 웹 소켓 서버
 ~~~java
 @Override
 protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
@@ -116,6 +118,7 @@ protected void handleTextMessage(WebSocketSession session, TextMessage message) 
         }
 }
 ~~~
+#### 관리자 페이지에서 사용 
 ~~~javascript
 sock.onmessage = function(evt){ // 서버에서 메시지가 전송됬을 때 자동 실행되는 콜백 메서드(onmessage) 
 	var data = evt.data;
