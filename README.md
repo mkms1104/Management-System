@@ -75,8 +75,11 @@ $.ajax({
 ~~~
 ### * 실시간 사용 시간 확인 과정
 ~~~javascript
+// userTime은 초 단위로 저장되어있음.
+var min = Math.floor(userTime/60); // 분 계산
+var sec = Math.floor(userTime%60); // 초 계산
+
 var timer = setInterval(function (){
-    // min(분), sec(초)  
 	if(sec == 1 && min == 0){ // 사용 시간 종료
 		clearInterval(timer);
 
@@ -95,6 +98,6 @@ var timer = setInterval(function (){
 		sec : sec,
 	};
 
-		sock.send(JSON.stringify(seatUser)); // 1초 마다 JSON 형태의 문자열로 변경 후 서버로 전송
-	}, 1000);						
+	sock.send(JSON.stringify(seatUser)); // 1초 마다 JSON 형태의 문자열로 변경 후 서버로 전송
+}, 1000);						
 ~~~
