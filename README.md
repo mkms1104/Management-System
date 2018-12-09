@@ -118,7 +118,7 @@ protected void handleTextMessage(WebSocketSession session, TextMessage message) 
         }
 }
 ~~~
-#### 관리자 페이지에서 사용 
+#### 관리자 페이지에서 사용 시간 처리 
 ~~~javascript
 sock.onmessage = function(evt){ // 서버에서 메시지가 전송됬을 때 자동 실행되는 콜백 메서드(onmessage) 
 	var data = evt.data;
