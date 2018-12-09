@@ -107,7 +107,7 @@ var timer = setInterval(function (){
 	sock.send(JSON.stringify(seatUser)); // 1초 마다 JSON 형태의 문자열로 변경 후 서버로 전송
 }, 1000);						
 ~~~
-#### 웹 소켓 서버
+#### <u>웹 소켓 서버</u>
 ~~~java
 @Override
 protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
