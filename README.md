@@ -76,6 +76,8 @@ $.ajax({
 ~~~html
 <img src="http://52.79.242.155:8080/FileServer/resources/foodImg/파일이름"/>
 ~~~
+<br></br>
+
 ### * 실시간 사용 시간 확인 과정
 #### 사용자 페이지에서 사용 시간 전달
 ~~~javascript
