@@ -17,7 +17,7 @@
 ## 설명
 ---
 - 관리자 계정에서 매장을 추가하고 매장 별 좌석 및 음식관리와 매출관리, 회원관리 등을 처리한다.
--	사용자 계정에서 원하는 매장에 접속하고 매장 별 좌석사용 및 음식주문 등을 이용한다.
+- 사용자 계정에서 원하는 매장에 접속하고 매장 별 좌석사용 및 음식주문 등을 이용한다.
 - 게시판, 쪽지 기능을 통해 사용자와 관리자 간의 실시간 소통을 할 수 있다.
 <br></br>
 
@@ -48,7 +48,7 @@
 - 사용자의 좌석 사용과 음식 주문 페이지 설계 및 디자인, 사용자 반응, CRUD 처리.
 - 관리자의 좌석 관리와 주문 처리, 음식 추가 및 재고 관리 페이지 설계 및 디자인, 사용자 반응, CRUD 처리.
 - 카운트 함수를 통한 실시간 사용시간 처리.
-- 소켓을 통한 실시간 사용 시간 확인.
+- 스프링 소켓을 통한 실시간 사용 시간 확인.
 - 이미지 업로드를 위한 전용 서버 구현.
 ### * 업로드 전용 서버 처리 과정
 ~~~html
@@ -75,6 +75,8 @@ $.ajax({
 ~~~
 ### * 실시간 사용 시간 확인 과정
 ~~~javascript
+var sock = new SockJS("<c:url value="/echo"/>"); // 소켓 연결
+
 // userTime은 초 단위로 저장되어있음.
 var min = Math.floor(userTime/60); // 분 계산
 var sec = Math.floor(userTime%60); // 초 계산
@@ -97,7 +99,31 @@ var timer = setInterval(function (){
 		min : min,
 		sec : sec,
 	};
-
+	
 	sock.send(JSON.stringify(seatUser)); // 1초 마다 JSON 형태의 문자열로 변경 후 서버로 전송
 }, 1000);						
+~~~
+~~~java
+@Override
+protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
+	logger.info("{}로 부터 {} 받음", session.getId(), message.getPayload());
+		
+	for(WebSocketSession sess : sessionList){ // 소켓 세션에 물려있는 모든 이용자에게 메시지 전송(보낸이 포함)
+        	sess.sendMessage(new TextMessage(message.getPayload()));
+        }
+}
+~~~
+~~~javascript
+sock.onmessage = function(evt){ // 서버에서 메시지가 전송됬을 때 자동 실행되는 콜백 메서드(onmessage) 
+	var data = evt.data;
+	data = JSON.parse(data); // 받은 JSON 형태의 문자열을 JSON 객체로 변환
+	
+	var seatId = data.seatId // 좌석 번호
+	var min = data.min // 분
+	var sec data.sec // 초
+}
+
+sock.onclose = function () { // 서버와 연결이 끊어졌을 때 자동 실행되는 콜벡 메서드(onclose)
+	// 사용 중인 좌석을 지운다.	
+}
 ~~~
