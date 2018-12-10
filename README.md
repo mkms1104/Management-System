@@ -10,8 +10,9 @@
 <img src="https://user-images.githubusercontent.com/19260410/49681676-46fb5300-fae9-11e8-92d8-ce37d608483c.PNG" width="420">
 </div>
 
-### 테스트용 사용자 아이디: min33 / 비밀번호: 1234 / 매장 jk_pc <br></br>
+### 테스트용 사용자 아이디: min33 / 비밀번호: 1234 / 매장 jk_pc 
 ### 테스트용 관리자 아이디: jka / 비밀번호: 1234 / 매장 jk_pc
+<br></br>
 
 ## [ [시연영상](https://youtu.be/1sraIQycvAM) ]
 ## [ [직접해보기](http://52.79.242.155/MS/) ]
