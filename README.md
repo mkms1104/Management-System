@@ -10,7 +10,7 @@
 <img src="https://user-images.githubusercontent.com/19260410/49681676-46fb5300-fae9-11e8-92d8-ce37d608483c.PNG" width="420">
 </div>
 
-## [ [시연영상](https://youtu.be/GoBE7Rcq_ks) ]
+## [ [시연영상](https://youtu.be/1sraIQycvAM) ]
 ## [ [직접해보기](http://52.79.242.155/Jindo_Dog/) ]
 <br></br>
 
