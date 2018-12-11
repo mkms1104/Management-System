@@ -14,7 +14,7 @@
 ### 테스트용 관리자 아이디: jka / 비밀번호: 1234 / 매장 jk_pc
 
 ## [ [시연영상](https://youtu.be/1sraIQycvAM) ]
-## [ [직접해보기](http://52.79.242.155/MS/) ]
+## [ [직접해보기](http://ec2-54-180-123-73.ap-northeast-2.compute.amazonaws.com/MS/) ]
 <br></br>
 
 ## 설명
